@@ -1,0 +1,155 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;    
+    box-sizing:border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #EB3349;
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);
+    background: linear-gradient(to right, #F45C43, #EB3349);
+    padding: 10px;
+}
+
+.todoApp{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    padding: 40px 30px 70px;
+    margin: 100px auto 20px;
+    border-radius: 10px;
+}
+
+.todoApp h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todoApp h2 img{
+    width: 50px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background: #EFEEF0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.row input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-weight: 14px;
+}
+
+.row button{
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    padding: 16px 35px;
+    background: #FF5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+#listContainer{
+    overflow-y: scroll;
+    height: 350px;
+    scrollbar-width: none;  
+    transition: all 0.3s ease;
+}
+
+
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 17px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 24px;
+    transition: all 0.2s ease;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+ul li:hover{
+    background: #28c904;
+    color: #fff;
+}
+
+ul li span{
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+ul li span:hover{
+    background: #edeef0;    
+}
+
+.myDate{
+    display: block;
+    right: 120px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.myDate::before{
+    content: '(';
+}
+.myDate::after{
+    content: ')';
+}
+.myDate:hover{
+    background: none;
+    color: #fff;
+}
+
+
+@media (max-width: 500px) {
+    .row button {
+        padding: 6px 23px;
+        
+        
+        font-size: 12px;
+        
+    }
+}
